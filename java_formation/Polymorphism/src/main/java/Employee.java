@@ -1,4 +1,4 @@
-public class Employee {
+public abstract class Employee {
     private String name;
     private String cpf;
     private double salary;
@@ -13,10 +13,7 @@ public class Employee {
         this.salary = salary;
     }
 
-    public double getBonus(){
-        return salary * 0.1;
-    }
-
+    public abstract double getBonus();
 
     public String getName() {
         return name;

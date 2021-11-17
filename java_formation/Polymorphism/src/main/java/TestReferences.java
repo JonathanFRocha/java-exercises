@@ -3,7 +3,7 @@ public class TestReferences {
     public static void main(String[] args){
         Manager g1 = new Manager("jonathan", "11234", 123.0);
         Employee g2 = new Manager("jonathan", "11234", 123.0);
-        Employee e1 = new Employee("jonathan", "11234", 300.0);
+        Employee e1 = new Manager("jonathan", "11234", 300.0);
 
 
         var bonusControl = new BonusControl();
