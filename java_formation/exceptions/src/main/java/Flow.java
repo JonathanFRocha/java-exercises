@@ -15,6 +15,11 @@ public class Flow {
         System.out.println("Start of method2");
         for(int i = 1; i <= 5; i++) {
             System.out.println(i);
+            try {
+                var a = 1/0;
+            }catch (ArithmeticException e){
+                System.out.println(e);
+            }
         }
         System.out.println("End of method2");
     }
