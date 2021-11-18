@@ -1,6 +1,6 @@
 package bank;
 
-public class Account {
+public abstract class Account {
 
     private double saldo;
     private int agencia;

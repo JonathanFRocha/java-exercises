@@ -1,6 +1,8 @@
-public class Manager extends Employee {
+package inheritance;
 
-    private String password;
+public class Manager extends Employee implements Authenticable {
+
+    private String password = "2222";
 
     public Manager() {
 
@@ -13,11 +15,7 @@ public class Manager extends Employee {
 
     @Override
     public double getBonus(){
-        return super.getBonus() + super.getSalary();
-    }
-
-    public boolean authenticate(String password) {
-        return password == this.password;
+        return 1000 + super.getSalary();
     }
 
     public String getPassword() {
@@ -26,5 +24,10 @@ public class Manager extends Employee {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    @Override
+    public boolean authenticate(String password) {
+        return this.password == password;
     }
 }

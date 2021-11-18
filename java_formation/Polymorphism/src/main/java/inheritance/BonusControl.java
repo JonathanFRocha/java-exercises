@@ -1,3 +1,5 @@
+package inheritance;
+
 public class BonusControl {
 
     private double soma;

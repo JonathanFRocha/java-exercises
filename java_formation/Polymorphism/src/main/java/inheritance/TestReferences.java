@@ -1,3 +1,5 @@
+package inheritance;
+
 public class TestReferences {
 
     public static void main(String[] args){
