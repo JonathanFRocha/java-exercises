@@ -17,4 +17,11 @@ public class Mock {
     public void setAnything(String anything) {
         this.anything = anything;
     }
+
+    @Override
+    public String toString() {
+        return "Mock{" +
+                "anything='" + anything + "'" +
+                '}';
+    }
 }
