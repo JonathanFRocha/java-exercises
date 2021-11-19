@@ -1,4 +1,4 @@
-public class FlowWithExceptions {
+public class FlowWithJVMError {
     public static void main(String[] args) {
         System.out.println("Start of main");
         try {
@@ -18,7 +18,8 @@ public class FlowWithExceptions {
     private static void method2() {
         System.out.println("Start of method2");
 
-        throw new MyException("RIP");
-        //System.out.println("End of method2");
+        method2();
+
+        System.out.println("End of method2");
     }
 }
