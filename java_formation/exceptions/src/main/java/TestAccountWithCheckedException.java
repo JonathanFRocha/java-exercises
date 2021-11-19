@@ -1,11 +1,11 @@
 public class TestAccountWithCheckedException {
 
-    public static void main(String[] args){
+    public static void main(String[] args) throws CheckedException{
         var account = new Acc();
 
         try{
             account.deposit();
-        }catch (MyException e) {
+        }catch (Exception e) {
             System.out.println(e);
         }
 

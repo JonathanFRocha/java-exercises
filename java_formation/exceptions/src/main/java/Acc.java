@@ -1,6 +1,6 @@
 public class Acc {
 
-    void deposit() throws MyException{
+    void deposit() throws CheckedException{
 
     }
 }
