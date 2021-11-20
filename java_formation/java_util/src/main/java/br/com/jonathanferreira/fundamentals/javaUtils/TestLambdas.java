@@ -7,7 +7,7 @@ import br.com.jonathanferreira.fundamentals.javaUtils.entities.SavingsAccount;
 import java.util.ArrayList;
 import java.util.Comparator;
 
-public class TestNumberComparator {
+public class TestLambdas {
     public static void main(String[] args) {
         var cc1 = new CheckingAccount("22", "33");
         cc1.deposit(333.0);
@@ -27,26 +27,20 @@ public class TestNumberComparator {
         list.add(cc3);
         list.add(cc4);
 
-        for(Account a: list){
+        for (Account a : list) {
             System.out.println(a.getNumber());
         }
 
-        var comparator = new AccountNumberComparator();
-        list.sort(comparator);
+        list.sort((c1, c2) -> {
+                    var c1Number = Integer.parseInt(c1.getNumber());
+                    var c2Number = Integer.parseInt(c2.getNumber());
+                    return Integer.compare(c1Number, c2Number);
+                }
+        );
 
+        list.forEach(c1 -> System.out.println(c1));
 
-        for(Account a: list){
-            System.out.println(a.getNumber());
-        }
     }
 }
 
-class AccountNumberComparator implements Comparator<Account> {
 
-    @Override
-    public int compare(Account c1, Account c2) {
-        var c1Number = Integer.parseInt(c1.getNumber());
-        var c2Number = Integer.parseInt(c2.getNumber());
-        return Integer.compare(c1Number, c2Number);
-    }
-}

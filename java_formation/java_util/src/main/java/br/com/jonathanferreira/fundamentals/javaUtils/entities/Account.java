@@ -1,6 +1,6 @@
 package br.com.jonathanferreira.fundamentals.javaUtils.entities;
 
-public abstract class Account {
+public abstract class Account implements Comparable<Account> {
     private double balance;
     private String agency;
     private String number;
@@ -58,5 +58,12 @@ public abstract class Account {
                 ", number='" + number + '\'' +
                 ", client=" + client +
                 '}';
+    }
+
+    @Override
+    public int compareTo(Account account) {
+        var number1 = Integer.parseInt(number);
+        var number2 = Integer.parseInt(account.number);
+        return Integer.compare(number1, number2);
     }
 }
