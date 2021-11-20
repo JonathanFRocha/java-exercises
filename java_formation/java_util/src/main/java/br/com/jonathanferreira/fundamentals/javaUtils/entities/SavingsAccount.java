@@ -2,9 +2,9 @@ package br.com.jonathanferreira.fundamentals.javaUtils.entities;
 
 import java.util.Objects;
 
-public class CheckingAccount extends Account {
+public class SavingsAccount extends Account {
 
-    public CheckingAccount(String agency, String number) {
+    public SavingsAccount(String agency, String number) {
         super(agency, number);
     }
 
@@ -12,7 +12,10 @@ public class CheckingAccount extends Account {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        CheckingAccount that = (CheckingAccount) o;
+        SavingsAccount that = (SavingsAccount) o;
+
         return Objects.equals(getAgency(), that.getAgency()) && Objects.equals(getNumber(), that.getNumber());
     }
+
+
 }
