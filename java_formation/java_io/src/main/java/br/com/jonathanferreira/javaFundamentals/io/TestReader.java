@@ -5,16 +5,20 @@ import java.io.*;
 public class TestReader {
 
     public static void main(String[] args) throws FileNotFoundException {
-        try(var fos = new FileOutputStream("lorem2.txt")){
-            Writer osw = new OutputStreamWriter(fos);
-            BufferedWriter bw = new BufferedWriter(osw);
+            try(var fis = new FileInputStream("lorem.txt")){
+                InputStreamReader isr = new InputStreamReader(fis);
+                BufferedReader br = new BufferedReader(isr);
 
-            bw.write("test test test test test test test test test");
-            bw.newLine();
-            bw.write("abc abc adc abc abc adc abc abc adc");
-            bw.close();
-        } catch (IOException e) {
-            System.out.println(e);
-        }
+                String line = br.readLine();
+                while(line != null){
+                    System.out.println(line);
+                    line = br.readLine();
+                }
+                br.close();
+            }catch (IOException e){
+                System.out.println(e);
+            }
+
+
     }
 }
