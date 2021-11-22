@@ -4,6 +4,9 @@ import br.com.jonathanferreira.java.fundamentals.tests.entities.Course;
 import br.com.jonathanferreira.java.fundamentals.tests.entities.Lecture;
 import br.com.jonathanferreira.java.fundamentals.tests.entities.Student;
 
+import java.util.Iterator;
+import java.util.Vector;
+
 public class TestCourseWithStudents {
     public static void main(String[] args) {
         var javaCollections = new Course("Java Collections", "Paulo");
@@ -30,6 +33,16 @@ public class TestCourseWithStudents {
 
         System.out.println("The student " + a4 + " is registered?");
         System.out.println(javaCollections.isRegistered(a4));
+
+
+        var students = javaCollections.getStudents();
+        Iterator<Student> iterator = students.iterator();
+
+        while (iterator.hasNext()){
+            System.out.println(iterator.next());
+        }
+
+        Vector<Student> vectorE = new Vector<>();
     }
 
 
