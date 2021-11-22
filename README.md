@@ -7,6 +7,6 @@
 - [x] _Java.lang - using Object and String class_
 - [x] _Java.util - collections, wrappers and lambda expression_
 - [x] _Java. io - streams, reader and writers_
-- [ ] _Java Collections - learning how to use lists, sets and maps_
+- [x] _Java Collections - learning how to use lists, sets and maps_
 - [ ] _Modern Java_
 - [ ] _TDD & Java, unit tests using JUnit_
