@@ -7,6 +7,7 @@ public class Course {
     private String teacher;
     private List<Lecture> lectures = new LinkedList<>();
     private Set<Student> students = new HashSet<>();
+    private Map<Integer, Student> studentRegisterMap = new HashMap<>();
 
     public Course(String name, String teacher) {
         this.name = name;
@@ -43,6 +44,7 @@ public class Course {
 
     public void register(Student student) {
         students.add(student);
+        studentRegisterMap.put(student.getRegister(), student);
     }
 
     @Override
@@ -53,5 +55,11 @@ public class Course {
 
     public boolean isRegistered(Student student) {
         return students.contains(student);
+    }
+
+    public Student searchRegister(int i) {
+        Student foundStudent = studentRegisterMap.get(i);
+        if (foundStudent == null) throw new NoSuchElementException("Student with register: " + i + " not found");
+        return foundStudent;
     }
 }
