@@ -5,6 +5,7 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 import java.util.function.Consumer;
+import java.util.function.Function;
 
 public class SortStrings {
     public static void main(String[] args) {
@@ -37,7 +38,17 @@ public class SortStrings {
 
         System.out.println("--------------lambda------------");
         words.sort((s1, s2) -> Integer.compare(s1.length(), s2.length()));
-        words.forEach(System.out::println);
+
+        Function<String, Integer> function = s -> s.length();
+        Comparator<String> comparator1 = Comparator.comparing(function);
+        words.sort(comparator1);
+
+        words.sort(Comparator.comparing(String::length));
+
+        Consumer<String> press = System.out::println;;
+        words.forEach(press);
+
+        words.forEach(s -> System.out.println(s));
     }
 }
 
