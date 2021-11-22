@@ -1,14 +1,12 @@
 package br.com.jonathanferreira.java.fundamentals.tests.entities;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.LinkedList;
-import java.util.List;
+import java.util.*;
 
 public class Course {
     private String name;
     private String teacher;
     private List<Lecture> lectures = new LinkedList<>();
+    private Set<Student> students = new HashSet<>();
 
     public Course(String name, String teacher) {
         this.name = name;
@@ -39,8 +37,21 @@ public class Course {
         return totalTime;
     }
 
+    public Set<Student> getStudents() {
+        return Collections.unmodifiableSet(students);
+    }
+
+    public void register(Student student) {
+        students.add(student);
+    }
+
     @Override
     public String toString() {
         return "course name:" + name + ", teacher=" + teacher + ", lectures=" + lectures + ", Total Time: " + getTotalTime();
+    }
+
+
+    public boolean isRegistered(Student student) {
+        return students.contains(student);
     }
 }
