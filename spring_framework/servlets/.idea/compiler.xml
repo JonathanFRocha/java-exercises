@@ -6,17 +6,8 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="leilao" />
+        <module name="servlets" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="leilao" target="1.8" />
-    </bytecodeTargetLevel>
-  </component>
-  <component name="JavacSettings">
-    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
-      <module name="leilao" options="-parameters" />
-      <module name="mockito" options="-parameters" />
-    </option>
   </component>
 </project>
