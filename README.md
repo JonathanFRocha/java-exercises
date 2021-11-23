@@ -9,4 +9,8 @@
 - [x] _Java. io - streams, reader and writers_
 - [x] _Java Collections - learning how to use lists, sets and maps_
 - [x] _Modern Java_
-- [ ] _TDD & Java, unit tests using JUnit_
+
+### Java Unit Tests
+
+- [x] _TDD & Java, unit tests using JUnit_
+- [] _TDD & Java, unit tests using Mockito_

@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="32608f22-2c6a-471f-9acb-3ff0c7901a43" name="Changes" comment="created roundup method in Employee class">
+      <change beforePath="$PROJECT_DIR$/../../README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/jonathanferreira/javafundamentals/unitTest/tdd/basicTest/Calculator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/jonathanferreira/javafundamentals/unitTest/tdd/basicTest/CalculatorTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/jonathanferreira/javafundamentals/unitTest/tdd/model/Employee.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/jonathanferreira/javafundamentals/unitTest/tdd/model/Perfomance.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/jonathanferreira/javafundamentals/unitTest/tdd/service/BonusService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/jonathanferreira/javafundamentals/unitTest/tdd/service/ReadjustmentService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/br/com/jonathanferreira/javafundamentals/unitTest/tdd/service/BonusServiceTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/br/com/jonathanferreira/javafundamentals/unitTest/tdd/service/ReadjustmentServiceTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/br/com/jonathanferreira/javafundamentals/unitTest/tdd/basicTest/Calculator.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/br/com/jonathanferreira/javafundamentals/unitTest/tdd/basicTest/CalculatorTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/br/com/jonathanferreira/javafundamentals/unitTest/tdd/model/Employee.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/br/com/jonathanferreira/javafundamentals/unitTest/tdd/model/Perfomance$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/br/com/jonathanferreira/javafundamentals/unitTest/tdd/model/Perfomance$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/br/com/jonathanferreira/javafundamentals/unitTest/tdd/model/Perfomance$3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/br/com/jonathanferreira/javafundamentals/unitTest/tdd/model/Perfomance.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/br/com/jonathanferreira/javafundamentals/unitTest/tdd/service/BonusService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/br/com/jonathanferreira/javafundamentals/unitTest/tdd/service/ReadjustmentService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/br/com/jonathanferreira/javafundamentals/unitTest/tdd/service/BonusServiceTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/br/com/jonathanferreira/javafundamentals/unitTest/tdd/service/ReadjustmentServiceTest.class" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+        <option value="Enum" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="ProjectId" id="21IOkNq7PKKWEPQwbJqcibVgJat" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="br.com.jonathanferreira.javafundamentals.unitTest.tdd.model" />
+      <recent name="br.com.jonathanferreira.javafundamentals.unitTest.tdd.service" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="br.com.jonathanferreira.javafundamentals.unitTest.tdd" />
+      <recent name="br.com.jonathanferreira.javafundamentals.unitTest" />
+    </key>
+  </component>
+  <component name="RunManager" selected="JUnit.BonusServiceTest">
+    <configuration name="BonusServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="unit_tests" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="br.com.jonathanferreira.javafundamentals.unitTest.tdd.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="br.com.jonathanferreira.javafundamentals.unitTest.tdd.service" />
+      <option name="MAIN_CLASS_NAME" value="br.com.jonathanferreira.javafundamentals.unitTest.tdd.service.BonusServiceTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BonusServiceTest.bonusShouldBeTenPercentOfSalary" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="unit_tests" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="br.com.jonathanferreira.javafundamentals.unitTest.tdd.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="br.com.jonathanferreira.javafundamentals.unitTest.tdd.service" />
+      <option name="MAIN_CLASS_NAME" value="br.com.jonathanferreira.javafundamentals.unitTest.tdd.service.BonusServiceTest" />
+      <option name="METHOD_NAME" value="bonusShouldBeTenPercentOfSalary" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BonusServiceTest.bonusShouldBeZeroForHighSalary" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="unit_tests" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="br.com.jonathanferreira.javafundamentals.unitTest.tdd.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="br.com.jonathanferreira.javafundamentals.unitTest.tdd.service" />
+      <option name="MAIN_CLASS_NAME" value="br.com.jonathanferreira.javafundamentals.unitTest.tdd.service.BonusServiceTest" />
+      <option name="METHOD_NAME" value="bonusShouldBeZeroForHighSalary" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CalculatorTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="unit_tests" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="br.com.jonathanferreira.javafundamentals.unitTest.tdd.basicTest.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="br.com.jonathanferreira.javafundamentals.unitTest.tdd.basicTest" />
+      <option name="MAIN_CLASS_NAME" value="br.com.jonathanferreira.javafundamentals.unitTest.tdd.basicTest.CalculatorTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ReadjustmentServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="unit_tests" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="br.com.jonathanferreira.javafundamentals.unitTest.tdd.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="br.com.jonathanferreira.javafundamentals.unitTest.tdd.service" />
+      <option name="MAIN_CLASS_NAME" value="br.com.jonathanferreira.javafundamentals.unitTest.tdd.service.ReadjustmentServiceTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.BonusServiceTest" />
+        <item itemvalue="JUnit.ReadjustmentServiceTest" />
+        <item itemvalue="JUnit.BonusServiceTest.bonusShouldBeZeroForHighSalary" />
+        <item itemvalue="JUnit.BonusServiceTest.bonusShouldBeTenPercentOfSalary" />
+        <item itemvalue="JUnit.CalculatorTest" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="32608f22-2c6a-471f-9acb-3ff0c7901a43" name="Changes" comment="" />
+      <created>1637625276315</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1637625276315</updated>
+    </task>
+    <task id="LOCAL-00001" summary="Testing Sum">
+      <created>1637627073612</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1637627073612</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Testing BonusService">
+      <created>1637628326962</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1637628326962</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Testing BonusService">
+      <created>1637628434573</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1637628434573</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Refactoring bonusService to throw exception and adapted test. created ReadjustmentService and tested it.">
+      <created>1637631434318</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1637631434318</updated>
+    </task>
+    <task id="LOCAL-00005" summary="created roundup method in Employee class">
+      <created>1637633091499</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1637633091499</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Testing Sum" />
+    <MESSAGE value="Testing BonusService" />
+    <MESSAGE value="Refactoring bonusService to throw exception and adapted test. created ReadjustmentService and tested it." />
+    <MESSAGE value="created roundup method in Employee class" />
+    <option name="LAST_COMMIT_MESSAGE" value="created roundup method in Employee class" />
+  </component>
+</project>
