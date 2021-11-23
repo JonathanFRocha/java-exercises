@@ -1,4 +1,4 @@
-package br.com.jonathanferreira.javafundamentals.unitTest.entities;
+package br.com.jonathanferreira.javafundamentals.unitTest.tdd.basicTest;
 
 
 import org.junit.jupiter.api.Assertions;
