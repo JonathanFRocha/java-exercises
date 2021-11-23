@@ -13,4 +13,4 @@
 ### Java Unit Tests
 
 - [x] _TDD & Java, unit tests using JUnit_
-- [] _TDD & Java, unit tests using Mockito_
+- [ ] _TDD & Java, unit tests using Mockito_
