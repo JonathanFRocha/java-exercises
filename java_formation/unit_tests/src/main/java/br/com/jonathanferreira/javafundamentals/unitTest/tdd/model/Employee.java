@@ -28,7 +28,11 @@ public class Employee {
     }
 
     public void readjustSalary(BigDecimal newSalary) {
-        salary = salary.add(newSalary)
-                .setScale(2, RoundingMode.HALF_UP);
+        salary = salary.add(newSalary);
+        roundUpSalary();
+    }
+
+    private void roundUpSalary() {
+        salary = this.salary.setScale(2, RoundingMode.HALF_UP);
     }
 }
