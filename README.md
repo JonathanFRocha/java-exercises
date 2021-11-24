@@ -10,7 +10,37 @@
 - [x] _Java Collections - learning how to use lists, sets and maps_
 - [x] _Modern Java_
 
+<br>
+
 ### Java Unit Tests
 
 - [x] _TDD & Java, unit tests using JUnit_
 - [x] _TDD & Java, unit tests using Mockito_
+
+<br>
+
+### Java Spring Framework
+
+#### Fundamentals of Web Java
+
+- [x] _Java Servlet, Web java fundamentals_
+- [ ] _Java Servlet, Autentication, Authorization and MVC pattern_
+- [ ] _Maven: Dependecy managing and Java application build_
+
+#### From JDBC to Spring Data
+
+- [ ] _Java and JDBC: Working with Database_
+- [ ] _Persistence using JPA: Introduction to Hibernate_
+- [ ] _Java and JPA: Advanced queries, perfomance and complex models_
+- [ ] _Spring Data JPA: Dependecy managing and Java application build_
+
+#### Web Application with Spring MVC and Spring Security
+
+- [ ] _Spring MVC: create a webapp using Thymeleaf and Bootstrap_
+- [ ] _Spring MVC: Authentications using Spring Security, API Rest and AJAX_
+
+#### REST API and Tests with Spring Boot
+
+- [ ] _Spring Boot API REST: Creating APIs_
+- [ ] _Spring Boot API REST: API Security, Cache, Monitoring_
+- [ ] _Spring Boot and Tests: Profiles, Tests and Deploy_
