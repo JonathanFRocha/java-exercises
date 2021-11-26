@@ -24,7 +24,7 @@
 #### Fundamentals of Web Java
 
 - [x] _Java Servlet, Web java fundamentals_
-- [ ] _Java Servlet, Autentication, Authorization and MVC pattern_
+- [x] _Java Servlet, Autentication, Authorization and MVC pattern_
 - [ ] _Maven: Dependecy managing and Java application build_
 
 #### From JDBC to Spring Data
