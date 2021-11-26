@@ -25,7 +25,7 @@
 
 - [x] _Java Servlet, Web java fundamentals_
 - [x] _Java Servlet, Autentication, Authorization and MVC pattern_
-- [ ] _Maven: Dependecy managing and Java application build_
+- [x] _Maven: Dependecy managing and Java application build_
 
 #### From JDBC to Spring Data
 
