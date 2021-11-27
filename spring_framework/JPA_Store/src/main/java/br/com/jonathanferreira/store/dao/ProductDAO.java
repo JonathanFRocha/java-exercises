@@ -3,6 +3,7 @@ package br.com.jonathanferreira.store.dao;
 import br.com.jonathanferreira.store.model.Product;
 
 import javax.persistence.EntityManager;
+import java.util.List;
 
 public class ProductDAO {
 
@@ -25,7 +26,12 @@ public class ProductDAO {
         this.em.remove(product);
     }
 
-    public Product findById(Long id){
+    public Product findById(Integer id){
         return em.find(Product.class, id);
+    }
+
+    public List<Product> findAll(){
+        String jpql = "SELECT p FROM Product p";
+        return em.createQuery(jpql, Product.class).getResultList();
     }
 }
