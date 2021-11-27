@@ -8,7 +8,7 @@ public class TestDelete {
 
     public static void main(String[] args) {
         try (Connection conn = new ConnectionFactory().getConnection()) {
-            var idToDelete = 2;
+            var idToDelete = 3;
             var sql = "DELETE FROM product WHERE id > ?";
             var pstm = conn.prepareStatement(sql);
             pstm.setInt(1, idToDelete);

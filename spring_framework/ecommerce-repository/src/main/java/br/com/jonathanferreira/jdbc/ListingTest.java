@@ -1,6 +1,7 @@
 package br.com.jonathanferreira.jdbc;
 
 import br.com.jonathanferreira.jdbc.configreader.PropertyReader;
+import br.com.jonathanferreira.jdbc.dao.ProductDAO;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -12,22 +13,10 @@ public class ListingTest {
 
     public static void main(String[] args) throws IllegalAccessException {
 
-        try (Connection conn = new ConnectionFactory().getConnection()){
-            var sql = "SELECT * FROM product";
-            var pstm = conn.prepareStatement(sql);
-            pstm.execute();
-
-            var rst = pstm.getResultSet();
-            while(rst.next()){
-                Integer id = rst.getInt("id");
-                String name = rst.getString("name");
-                String description = rst.getString("description");
-
-                System.out.println(id);
-                System.out.println(name);
-                System.out.println(description);
-            }
-        }catch (SQLException e) {
+        try (Connection conn = new ConnectionFactory().getConnection()) {
+            var productList = new ProductDAO(conn).list();
+            System.out.println(productList);
+        } catch (SQLException e) {
             System.out.println(e.getMessage());
         }
     }
