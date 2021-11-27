@@ -1,13 +1,11 @@
 package br.com.jonathanferreira.store.tests;
 
 import br.com.jonathanferreira.store.dao.CategoryDAO;
-import br.com.jonathanferreira.store.dao.ProductDAO;
 import br.com.jonathanferreira.store.model.Category;
 import br.com.jonathanferreira.store.model.Product;
 import br.com.jonathanferreira.store.util.JPAUtil;
 
 import javax.persistence.EntityManager;
-import java.math.BigDecimal;
 
 public class TestEMLifeCycle {
     public static void main(String[] args) {
