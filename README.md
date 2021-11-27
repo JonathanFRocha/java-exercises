@@ -29,7 +29,7 @@
 
 #### From JDBC to Spring Data
 
-- [ ] _Java and JDBC: Working with Database_
+- [x] _Java and JDBC: Working with Database_
 - [ ] _Persistence using JPA: Introduction to Hibernate_
 - [ ] _Java and JPA: Advanced queries, perfomance and complex models_
 - [ ] _Spring Data JPA: Dependecy managing and Java application build_
