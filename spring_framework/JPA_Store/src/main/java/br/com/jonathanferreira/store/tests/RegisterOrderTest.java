@@ -32,6 +32,17 @@ public class RegisterOrderTest {
         orderDAO.save(order);
 
         em.getTransaction().commit();
+
+        var totalSold = orderDAO.totalValueSold();
+        System.out.println("total value sold: "+totalSold);
+
+        var o = orderDAO.salesReport();
+
+        o.forEach(obj -> {
+            System.out.println(obj[0]);
+            System.out.println(obj[1]);
+            System.out.println(obj[2]);
+        });
         em.close();
     }
 

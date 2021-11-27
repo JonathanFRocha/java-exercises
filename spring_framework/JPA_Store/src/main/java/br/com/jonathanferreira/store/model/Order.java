@@ -13,7 +13,7 @@ public class Order {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     @Column(name = "total_price")
-    private BigDecimal totalPrice;
+    private BigDecimal totalPrice = BigDecimal.ZERO;
     private LocalDate date = LocalDate.now();
     @ManyToOne
     private Client client;
@@ -54,6 +54,8 @@ public class Order {
 
     public void addItem(OrderItems item) {
         item.setOrder(this);
+        var totalValue = item.getUnitPrice().multiply(new BigDecimal(item.getQuantity()));
+        setTotalPrice(totalValue);
         this.orderItemsList.add(item);
     }
 }
