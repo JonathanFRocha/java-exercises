@@ -1,23 +1,30 @@
 package br.com.jonathanferreira.jdbc;
 
 import br.com.jonathanferreira.jdbc.configreader.PropertyReader;
+import com.mchange.v2.c3p0.ComboPooledDataSource;
 
+import javax.sql.DataSource;
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.Properties;
 
 public class ConnectionFactory {
 
-    public Connection getConnection() throws IllegalAccessException, SQLException {
+    private final DataSource dataSources;
+
+    public ConnectionFactory() throws IllegalAccessException {
+        ComboPooledDataSource comboPooledDataSource = new ComboPooledDataSource();
         Properties props = PropertyReader.getProperties();
 
         if(props == null) throw new IllegalAccessException("Prop error");
+        comboPooledDataSource.setJdbcUrl(props.getProperty("datasource.url"));
+        comboPooledDataSource.setUser(props.getProperty("datasource.user"));
+        comboPooledDataSource.setPassword(props.getProperty("datasource.password"));
 
-        String url = props.getProperty("datasource.url");
-        String user = props.getProperty("datasource.user");
-        String password = props.getProperty("datasource.password");
+        this.dataSources = comboPooledDataSource;
+    }
 
-        return DriverManager.getConnection(url, user, password);
+    public Connection getConnection() throws SQLException {
+        return dataSources.getConnection();
     }
 }
