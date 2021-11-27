@@ -1,5 +1,6 @@
 package br.com.jonathanferreira.jdbc.dao;
 
+import br.com.jonathanferreira.jdbc.model.Category;
 import br.com.jonathanferreira.jdbc.model.Product;
 
 import java.sql.*;
@@ -36,6 +37,27 @@ public class ProductDAO {
         List<Product> productList = new ArrayList<>();
         String sql = "SELECT * FROM product";
         try(PreparedStatement pstm = connection.prepareStatement(sql)){
+            pstm.execute();
+            var rst = pstm.getResultSet();
+            while(rst.next()){
+                Integer id = rst.getInt("id");
+                String name = rst.getString("name");
+                String description = rst.getString("description");
+                productList.add(new Product(id, name, description));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return productList;
+    }
+
+    public List<Product> search(Category c) {
+
+        List<Product> productList = new ArrayList<>();
+        String sql = "SELECT * FROM product WHERE category_id=?";
+
+        try(PreparedStatement pstm = connection.prepareStatement(sql)){
+            pstm.setInt(1, c.getId());
             pstm.execute();
             var rst = pstm.getResultSet();
             while(rst.next()){
