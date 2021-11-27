@@ -2,6 +2,7 @@ package br.com.jonathanferreira.store.model;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
+import java.time.LocalDate;
 
 @Entity
 @Table(name = "products")
@@ -12,6 +13,32 @@ public class Product {
     private String name;
     private String description;
     private BigDecimal price;
+    private final LocalDate registerDate = LocalDate.now();
+
+    @ManyToOne()
+    private Category category;
+
+    public Product() {
+    }
+
+    public Product(String name, String description, BigDecimal price, Category category) {
+        this.name = name;
+        this.description = description;
+        this.price = price;
+        this.category = category;
+    }
+
+    public LocalDate getRegisterDate() {
+        return registerDate;
+    }
+
+    public Category getCategory() {
+        return category;
+    }
+
+    public void setCategory(Category category) {
+        this.category = category;
+    }
 
     public void setId(Integer id) {
         this.id = id;
