@@ -13,10 +13,11 @@ public class ListingTest {
     public static void main(String[] args) throws IllegalAccessException {
 
         try (Connection conn = new ConnectionFactory().getConnection()){
-            var stm = conn.createStatement();
-            stm.execute("SELECT * FROM product");
+            var sql = "SELECT * FROM product";
+            var pstm = conn.prepareStatement(sql);
+            pstm.execute();
 
-            var rst = stm.getResultSet();
+            var rst = pstm.getResultSet();
             while(rst.next()){
                 Integer id = rst.getInt("id");
                 String name = rst.getString("name");
