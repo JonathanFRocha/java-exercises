@@ -15,7 +15,7 @@ public class Order {
     @Column(name = "total_price")
     private BigDecimal totalPrice = BigDecimal.ZERO;
     private LocalDate date = LocalDate.now();
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     private Client client;
 
     @OneToMany(mappedBy = "order", cascade = CascadeType.ALL)
@@ -50,6 +50,10 @@ public class Order {
 
     public void setClient(Client client) {
         this.client = client;
+    }
+
+    public List<OrderItems> getOrderItemsList() {
+        return orderItemsList;
     }
 
     public void addItem(OrderItems item) {

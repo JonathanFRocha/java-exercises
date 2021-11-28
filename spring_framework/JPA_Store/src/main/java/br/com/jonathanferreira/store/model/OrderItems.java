@@ -12,9 +12,9 @@ public class OrderItems {
     @Column(name = "unit_price")
     private BigDecimal unitPrice;
     private Integer quantity;
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     private Product product;
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     private Order order;
 
     public OrderItems() {
