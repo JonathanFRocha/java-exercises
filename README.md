@@ -32,7 +32,7 @@
 - [x] _Java and JDBC: Working with Database_
 - [x] _Persistence using JPA: Introduction to Hibernate_
 - [x] _Java and JPA: Advanced queries, perfomance and complex models_
-- [ ] _Spring Data JPA: Dependecy managing and Java application build_
+- [x] _Spring Data JPA: Dependecy managing and Java application build_
 
 #### Web Application with Spring MVC and Spring Security
 
