@@ -5,21 +5,28 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-@Table(name = "jobs")
-public class Job {
+@Table(name = "work_places")
+public class WorkPlace {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String description;
-    @OneToMany(mappedBy = "job")
+    private String address;
+    @ManyToMany(mappedBy = "workPlaces")
     private List<Employee> employees = new ArrayList<>();
 
-
-    public Job() {
+    public WorkPlace(Integer id, String description, String address) {
+        this.id = id;
+        this.description = description;
+        this.address = address;
     }
 
-    public Job(String description) {
+    public WorkPlace(String description, String address) {
         this.description = description;
+        this.address = address;
+    }
+
+    public WorkPlace() {
     }
 
     public Integer getId() {
@@ -38,6 +45,10 @@ public class Job {
         this.description = description;
     }
 
+    public String getAddress() {
+        return address;
+    }
+
     public List<Employee> getEmployees() {
         return employees;
     }
@@ -46,8 +57,7 @@ public class Job {
         this.employees = employees;
     }
 
-    @Override
-    public String toString() {
-        return String.format("Job description: %s, Job id: %d", description, id);
+    public void setAddress(String address) {
+        this.address = address;
     }
 }

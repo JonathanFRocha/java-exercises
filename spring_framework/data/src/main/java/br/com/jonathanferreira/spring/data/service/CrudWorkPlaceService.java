@@ -8,11 +8,11 @@ import java.util.Optional;
 import java.util.Scanner;
 
 @Service
-public class CrudJobService {
+public class CrudWorkPlaceService {
     private Boolean system = true;
     private final JobRepository jobRepository;
 
-    public CrudJobService(JobRepository jobRepository) {
+    public CrudWorkPlaceService(JobRepository jobRepository) {
         this.jobRepository = jobRepository;
     }
 
