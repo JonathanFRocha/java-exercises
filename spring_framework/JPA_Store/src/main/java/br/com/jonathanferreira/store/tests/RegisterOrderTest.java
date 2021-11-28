@@ -20,16 +20,29 @@ public class RegisterOrderTest {
         ProductDAO productDAO = new ProductDAO(em);
         ClientDAO clientDAO = new ClientDAO(em);
 
-        var product = productDAO.findById(1);
-        var client = clientDAO.findById(1);
+        var cellphone = productDAO.findById(1);
+        var furniture = productDAO.findById(2);
+        var homeAppliance = productDAO.findById(3);
+        var jonathan = clientDAO.findById(1);
+        var fernanda = clientDAO.findById(2);
 
         em.getTransaction().begin();
 
-        Order order =  new Order(client);
-        order.addItem(new OrderItems(10, product, order));
+        Order order1 =  new Order(jonathan);
+        Order order2 =  new Order(jonathan);
+        Order order3 =  new Order(fernanda);
+        Order order4 =  new Order(fernanda);
+
+        order1.addItem(new OrderItems(50, cellphone, order1));
+        order2.addItem(new OrderItems(8, furniture, order2));
+        order3.addItem(new OrderItems(2, homeAppliance, order3));
+        order4.addItem(new OrderItems(30, cellphone, order4));
 
         OrderDAO orderDAO = new OrderDAO(em);
-        orderDAO.save(order);
+        orderDAO.save(order1);
+        orderDAO.save(order2);
+        orderDAO.save(order3);
+        orderDAO.save(order4);
 
         em.getTransaction().commit();
 
@@ -38,20 +51,19 @@ public class RegisterOrderTest {
 
         var o = orderDAO.salesReport();
 
-        o.forEach(obj -> {
-            System.out.println(obj[0]);
-            System.out.println(obj[1]);
-            System.out.println(obj[2]);
-        });
+        o.forEach(System.out::println);
         em.close();
     }
 
     private static void populateDB(){
         var category = new Category("Cellphones");
+        var category2 = new Category("Furniture");
+        var category3 = new Category("Home Appliance");
         var cellphone = new Product("Xiami Redmi", "Good Cellphone", new BigDecimal("800"), category);
-        var meme = new Product("meme", "phone", new BigDecimal("400"), category);
-        var bobi = new Product("Bobi", "Good", new BigDecimal("200"), category);
+        var bed = new Product("Bed", "King Sized Bed", new BigDecimal("2150"), category2);
+        var refrigerator = new Product("Refrigerator", "Super Freeze Mode", new BigDecimal("999"), category3);
         var client = new Client("Jonathan", "1234567");
+        var client2 = new Client("Fernanda", "444232");
 
         EntityManager em = JPAUtil.getEntityManager();
 
@@ -61,10 +73,13 @@ public class RegisterOrderTest {
 
         em.getTransaction().begin();
         categoryDAO.save(category);
+        categoryDAO.save(category2);
+        categoryDAO.save(category3);
         productDAO.save(cellphone);
-        productDAO.save(meme);
-        productDAO.save(bobi);
+        productDAO.save(bed);
+        productDAO.save(refrigerator);
         clientDAO.save(client);
+        clientDAO.save(client2);
         em.getTransaction().commit();
 
         Product p = productDAO.findById(1);

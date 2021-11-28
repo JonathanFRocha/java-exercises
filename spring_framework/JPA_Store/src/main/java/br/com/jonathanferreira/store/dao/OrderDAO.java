@@ -1,6 +1,7 @@
 package br.com.jonathanferreira.store.dao;
 
 import br.com.jonathanferreira.store.model.Order;
+import br.com.jonathanferreira.store.vo.SalesReportVO;
 
 import javax.persistence.EntityManager;
 import java.math.BigDecimal;
@@ -23,15 +24,15 @@ public class OrderDAO {
                 .getSingleResult();
     }
 
-    public List<Object[]> salesReport() {
-        String jpql = "SELECT product.name, SUM(orderItems.quantity), MAX(o.date) " +
+    public List<SalesReportVO> salesReport() {
+        String jpql = "SELECT new br.com.jonathanferreira.store.vo.SalesReportVO(product.name, SUM(orderItems.quantity), MAX(o.date)) " +
                 "FROM Order o " +
                 "JOIN o.orderItemsList orderItems " +
                 "JOIN orderItems.product product " +
                 "GROUP BY product.name " +
                 "ORDER BY orderItems.quantity DESC";
 
-        return em.createQuery(jpql, Object[].class)
+        return em.createQuery(jpql, SalesReportVO.class)
                 .getResultList();
     }
 }
