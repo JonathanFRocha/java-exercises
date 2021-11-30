@@ -1,14 +1,15 @@
 package br.com.jonathanferreira.spring.forum.model;
 
+import javax.persistence.*;
+
+@Entity
+@Table(name = "courses")
 public class Course {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String name;
     private String category;
-
-    public Course(String name, String category) {
-        this.name = name;
-        this.category = category;
-    }
 
     @Override
     public boolean equals(Object obj) {

@@ -1,25 +1,29 @@
 package br.com.jonathanferreira.spring.forum.model;
 
+import javax.persistence.*;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
+@Entity
+@Table(name = "topics")
 public class Topic {
-
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String title;
     private String message;
     private LocalDateTime creationDate = LocalDateTime.now();
+
+    @Enumerated(EnumType.STRING)
     private StatusTopic status = StatusTopic.NOT_RESPONDED;
+    @ManyToOne
     private User author;
+    @ManyToOne
     private Course course;
+    @OneToMany(mappedBy = "topic")
     private List<Answer> answers = new ArrayList<>();
 
-    public Topic(String title, String message, Course course) {
-        this.title = title;
-        this.message = message;
-        this.course = course;
-    }
 
     @Override
     public boolean equals(Object obj) {

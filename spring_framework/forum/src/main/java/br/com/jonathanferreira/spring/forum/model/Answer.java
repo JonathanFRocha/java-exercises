@@ -1,12 +1,20 @@
 package br.com.jonathanferreira.spring.forum.model;
 
+import javax.persistence.*;
 import java.time.LocalDateTime;
 
+
+@Entity
+@Table(name = "answers")
 public class Answer {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String message;
+    @ManyToOne
     private Topic topic;
     private LocalDateTime creationDate = LocalDateTime.now();
+    @ManyToOne
     private User author;
     private Boolean solution = false;
 
