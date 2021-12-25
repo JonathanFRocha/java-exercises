@@ -41,6 +41,6 @@
 
 #### REST API and Tests with Spring Boot
 
-- [ ] _Spring Boot API REST: Creating APIs_
+- [x] _Spring Boot API REST: Creating APIs_
 - [ ] _Spring Boot API REST: API Security, Cache, Monitoring_
 - [ ] _Spring Boot and Tests: Profiles, Tests and Deploy_
