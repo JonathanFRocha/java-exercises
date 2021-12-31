@@ -8,15 +8,16 @@ import br.com.jonathanferreira.spring.forum.model.Topic;
 import br.com.jonathanferreira.spring.forum.repository.CourseRepository;
 import br.com.jonathanferreira.spring.forum.repository.TopicRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.util.UriComponentsBuilder;
 
 import javax.transaction.Transactional;
 import javax.validation.Valid;
-import javax.websocket.server.PathParam;
 import java.net.URI;
-import java.util.List;
 
 @RestController
 @RequestMapping(path = "/topics")
@@ -28,14 +29,20 @@ public class TopicsController {
     private CourseRepository courseRepository;
 
     @GetMapping
-    public List<TopicDto> List(@RequestParam(required = false) String course) {
-        List<Topic> Topics;
+    public Page<TopicDto> List(
+            @RequestParam(required = false) String course,
+            @RequestParam int page,
+            @RequestParam int qty
+    ) {
+        Pageable pagination = PageRequest.of(page, qty);
+
         if(course == null){
-            Topics = topicRepository.findAll();
+            var Topics = topicRepository.findAll(pagination);
+            return TopicDto.convert(Topics);
         }else {
-            Topics = topicRepository.findByCourseName(course);
+            var Topics = topicRepository.findByCourseName(course, pagination);
+            return TopicDto.convert(Topics);
         }
-        return TopicDto.convert(Topics);
     }
 
     @PostMapping

@@ -1,10 +1,9 @@
 package br.com.jonathanferreira.spring.forum.controller.dto;
 
 import br.com.jonathanferreira.spring.forum.model.Topic;
+import org.springframework.data.domain.Page;
 
 import java.time.LocalDateTime;
-import java.util.List;
-import java.util.stream.Collectors;
 
 public class TopicDto {
     private Integer id;
@@ -22,8 +21,8 @@ public class TopicDto {
         this.creationDate = topic.getCreationDate();
     }
 
-    public static List<TopicDto> convert(List<Topic> topics) {
-        return topics.stream().map(TopicDto::new).collect(Collectors.toList());
+    public static Page<TopicDto> convert(Page<Topic> topics) {
+        return topics.map(TopicDto::new);
     }
 
     public Integer getId() {
