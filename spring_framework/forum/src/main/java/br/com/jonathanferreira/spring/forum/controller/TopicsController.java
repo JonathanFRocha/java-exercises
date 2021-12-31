@@ -9,8 +9,9 @@ import br.com.jonathanferreira.spring.forum.repository.CourseRepository;
 import br.com.jonathanferreira.spring.forum.repository.TopicRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
-import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
+import org.springframework.data.web.PageableDefault;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.util.UriComponentsBuilder;
@@ -31,15 +32,14 @@ public class TopicsController {
     @GetMapping
     public Page<TopicDto> List(
             @RequestParam(required = false) String course,
-            @RequestParam int page,
-            @RequestParam int qty
+            @PageableDefault(sort = "id", direction = Sort.Direction.DESC, page = 0, size = 10) Pageable pagination
     ) {
-        Pageable pagination = PageRequest.of(page, qty);
+//        Pageable pagination = PageRequest.of(page, qty, Sort.Direction.ASC, sorting);
 
-        if(course == null){
+        if (course == null) {
             var Topics = topicRepository.findAll(pagination);
             return TopicDto.convert(Topics);
-        }else {
+        } else {
             var Topics = topicRepository.findByCourseName(course, pagination);
             return TopicDto.convert(Topics);
         }
@@ -47,7 +47,7 @@ public class TopicsController {
 
     @PostMapping
     @Transactional
-    public ResponseEntity<TopicDto> register(@Valid @RequestBody TopicForm form, UriComponentsBuilder uriBuilder){
+    public ResponseEntity<TopicDto> register(@Valid @RequestBody TopicForm form, UriComponentsBuilder uriBuilder) {
         Topic topic = form.Convert(courseRepository);
         topicRepository.save(topic);
         URI uri = uriBuilder.path("/topics/{id}").buildAndExpand(topic.getId()).toUri();
@@ -55,9 +55,9 @@ public class TopicsController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<DetailedTopicDto> detail(@PathVariable int id){
+    public ResponseEntity<DetailedTopicDto> detail(@PathVariable int id) {
         var optionalTopic = topicRepository.findById(id);
-        if(optionalTopic.isPresent()){
+        if (optionalTopic.isPresent()) {
             return ResponseEntity.ok(new DetailedTopicDto(optionalTopic.get()));
         }
         return ResponseEntity.notFound().build();
@@ -65,9 +65,9 @@ public class TopicsController {
 
     @PutMapping("/{id}")
     @Transactional
-    public ResponseEntity<TopicDto> update(@Valid @RequestBody UpdateTopicForm form, @PathVariable int id){
+    public ResponseEntity<TopicDto> update(@Valid @RequestBody UpdateTopicForm form, @PathVariable int id) {
         var optionalTopic = topicRepository.findById(id);
-        if(optionalTopic.isPresent()){
+        if (optionalTopic.isPresent()) {
             Topic topic = form.update(id, topicRepository);
             return ResponseEntity.ok(new TopicDto(topic));
         }
@@ -76,9 +76,9 @@ public class TopicsController {
 
     @DeleteMapping("/{id}")
     @Transactional
-    public ResponseEntity<?> delete(@PathVariable int id){
+    public ResponseEntity<?> delete(@PathVariable int id) {
         var optionalTopic = topicRepository.findById(id);
-        if(optionalTopic.isPresent()){
+        if (optionalTopic.isPresent()) {
             topicRepository.deleteById(id);
             return ResponseEntity.ok().build();
         }
