@@ -8,6 +8,8 @@ import br.com.jonathanferreira.spring.forum.model.Topic;
 import br.com.jonathanferreira.spring.forum.repository.CourseRepository;
 import br.com.jonathanferreira.spring.forum.repository.TopicRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.CacheEvict;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
@@ -30,6 +32,7 @@ public class TopicsController {
     private CourseRepository courseRepository;
 
     @GetMapping
+    @Cacheable(value = "topicsList")
     public Page<TopicDto> List(
             @RequestParam(required = false) String course,
             @PageableDefault(sort = "id", direction = Sort.Direction.DESC, page = 0, size = 10) Pageable pagination
@@ -47,6 +50,7 @@ public class TopicsController {
 
     @PostMapping
     @Transactional
+    @CacheEvict(value = "topicsList", allEntries = true)
     public ResponseEntity<TopicDto> register(@Valid @RequestBody TopicForm form, UriComponentsBuilder uriBuilder) {
         Topic topic = form.Convert(courseRepository);
         topicRepository.save(topic);
@@ -65,6 +69,7 @@ public class TopicsController {
 
     @PutMapping("/{id}")
     @Transactional
+    @CacheEvict(value = "topicsList", allEntries = true)
     public ResponseEntity<TopicDto> update(@Valid @RequestBody UpdateTopicForm form, @PathVariable int id) {
         var optionalTopic = topicRepository.findById(id);
         if (optionalTopic.isPresent()) {
@@ -76,6 +81,7 @@ public class TopicsController {
 
     @DeleteMapping("/{id}")
     @Transactional
+    @CacheEvict(value = "topicsList", allEntries = true)
     public ResponseEntity<?> delete(@PathVariable int id) {
         var optionalTopic = topicRepository.findById(id);
         if (optionalTopic.isPresent()) {
