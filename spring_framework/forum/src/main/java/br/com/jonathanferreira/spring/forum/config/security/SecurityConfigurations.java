@@ -27,6 +27,7 @@ public class SecurityConfigurations extends WebSecurityConfigurerAdapter {
     @Autowired
     private UserRepository userRepository;
 
+
     //auth configurations
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
@@ -39,6 +40,7 @@ public class SecurityConfigurations extends WebSecurityConfigurerAdapter {
                 .antMatchers(HttpMethod.GET, "/topics").permitAll()
                 .antMatchers(HttpMethod.GET, "/topics/*").permitAll()
                 .antMatchers(HttpMethod.POST,"/auth").permitAll()
+                .antMatchers(HttpMethod.GET, "/actuator/**").permitAll()
                 .anyRequest().authenticated()
                 .and().csrf().disable()
                 .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
@@ -48,6 +50,12 @@ public class SecurityConfigurations extends WebSecurityConfigurerAdapter {
     // static resource configurations
     @Override
     public void configure(WebSecurity web) throws Exception {
+        web.ignoring().antMatchers("/v2/api-docs",
+                "/configuration/ui",
+                "/swagger-resources/**",
+                "/configuration/security",
+                "/swagger-ui.html",
+                "/webjars/**");
 
     }
 
