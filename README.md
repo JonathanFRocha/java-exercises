@@ -36,11 +36,11 @@
 
 #### Web Application with Spring MVC and Spring Security
 
-- [ ] _Spring MVC: create a webapp using Thymeleaf and Bootstrap_
-- [ ] _Spring MVC: Authentications using Spring Security, API Rest and AJAX_
+- [x] _Spring MVC: create a webapp using Thymeleaf and Bootstrap_
+- [x] _Spring MVC: Authentications using Spring Security, API Rest and AJAX_
 
 #### REST API and Tests with Spring Boot
 
 - [x] _Spring Boot API REST: Creating APIs_
-- [ ] _Spring Boot API REST: API Security, Cache, Monitoring_
-- [ ] _Spring Boot and Tests: Profiles, Tests and Deploy_
+- [x] _Spring Boot API REST: API Security, Cache, Monitoring_
+- [x] _Spring Boot and Tests: Profiles, Tests and Deploy_
